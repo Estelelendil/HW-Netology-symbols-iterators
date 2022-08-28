@@ -2,4 +2,7 @@ import Team from './basic';
 
 const Zero = new Team();
 
-console.log(Zero.iterator());
+for (const item of Zero) {
+  console.log(item);
+}
+// console.log(Zero.iterator);

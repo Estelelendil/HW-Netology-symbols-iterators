@@ -27,26 +27,44 @@ export default class Team {
         defence: 10,
       },
     ];
+    this.length = this.team.length;
   }
 
-  iterator = function () {
-    // [Symbol.iterator](){
-    //   return this; }
-
-    let index = 0;
-    return { // метод должен вернуть объект с методом next()
-      next() {
-        if (index < this.team.length) {
-          return {
-            done: false,
-            value: this.team.index,
-          };
-        }
-        index++;
+[Symbol.iterator]=function () {
+  let index = 0;
+  return { // метод должен вернуть объект с методом next()
+    next() {
+      if (index < this.length) {
         return {
-          done: true,
+          done: false,
+          value: this.team[index],
         };
-      },
-    };
+      }
+      index++;
+      return {
+        done: true,
+      };
+    },
   };
+};
+  // [Symbol.iterator]:function(){
+  //   // [Symbol.iterator](){
+  //   //   return this; }
+
+  //   let index = 0;
+  //   return { // метод должен вернуть объект с методом next()
+  //     next() {
+  //       if (index < this.team.length) {
+  //         return {
+  //           done: false,
+  //           value: this.team.index,
+  //         };
+  //       }
+  //       index++;
+  //       return {
+  //         done: true,
+  //       };
+  //     },
+  //   };
+  // };
 }
