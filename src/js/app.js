@@ -1,6 +1,5 @@
-// TODO: write your code here
-import sum from './basic';
+import Team from './basic';
 
-// console.log('worked');
+const Zero = new Team();
 
-// console.log(sum([1, 2]));
+console.log(Zero.iterator());
