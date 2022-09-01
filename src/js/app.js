@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import Team from './basic';
 
 const Zero = new Team();
