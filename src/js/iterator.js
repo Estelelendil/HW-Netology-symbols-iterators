@@ -33,8 +33,8 @@ export default class Team {
   // eslint-disable-next-line class-methods-use-this
   [Symbol.iterator]() {
     let index = -1;
-    return { // метод должен вернуть объект с методом next()
-      next() {
+    return {
+      next: () => {
         index++;
         if (index < this.length) {
           return {
@@ -48,24 +48,4 @@ export default class Team {
       },
     };
   }
-  // [Symbol.iterator]:function(){
-  //   // [Symbol.iterator](){
-  //   //   return this; }
-
-  //   let index = 0;
-  //   return { // метод должен вернуть объект с методом next()
-  //     next() {
-  //       if (index < this.team.length) {
-  //         return {
-  //           done: false,
-  //           value: this.team.index,
-  //         };
-  //       }
-  //       index++;
-  //       return {
-  //         done: true,
-  //       };
-  //     },
-  //   };
-  // };
 }
